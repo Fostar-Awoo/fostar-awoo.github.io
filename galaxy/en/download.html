@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Galaxy Client</title>
+    <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+    <style>
+        html,
+            body {
+              margin: 0;
+              /**禁用字体缩放**/
+              -webkit-text-size-adjust: none;
+            }
+        
+            /**隐藏未加载的组件**/
+            :not(:defined) {
+              display: none;
+            }
+            a {
+              text-decoration: none;
+              color: var(--s-color-primary);
+            }
+            div.{
+              overflow: hidden;
+            }
+            div.content{
+              width: 95%;
+              margin: auto;
+            }
+            div.infocards {
+              display: grid;
+                    justify-content: center;
+                    align-items: center;
+            }
+    </style>
+</head>
+
+<body>
+    <s-page theme="auto">
+        <s-drawer style="height: 100%" id="drawer">
+          <div slot="start">
+          <s-menu style="max-width: 280px; margin: 0">
+          <a href="index.html"><s-menu-item>
+          <s-icon slot="start" name="home"></s-icon>
+          Home
+          </s-menu-item>
+          </a>
+</s-menu>
+  </div>
+        <s-appbar style="width:100%">
+              <!--左侧菜单按钮-->
+            <s-icon-button slot="navigation" onclick="document.querySelector('#drawer').toggle()">
+              <s-icon name="menu"></s-icon>
+            </s-icon-button>
+            <!--标题-->
+            <div slot="headline">Get Galaxy</div>
+        </s-appbar>
+        <div class="content">
+          <h1>Get Galaxy</h1>
+          <div class="infocards">
+          <s-card style="display: block; max-width: 320px; padding: 24px; background: #B71C1C"; >
+            <div style="position:relative;top: -15px">
+          <p style="position:relative;color: white;display:inline;top:4px" class="material-icons">warning</p>
+          <p style="color: white;display:inline;font-size:15px"><b>Warning</b></p>
+          <p style="color: white;">Galaxy <b>NEVER</b> make software packages publicly available. If you obtain Galaxy packages from sources other than those provided by the developer, please <b>REPORT TO THE DEVELOPER</b>!</p>
+          <p style="color: white;"><i>（Contact details of developer）</i></p>
+          </div>
+            </s-card>
+            <div style="height:50px;"></div>
+            <s-card style="display: block; max-width: 320px; padding: 24px;"; >
+            <div style="position:relative;top: -15px">
+          <p style="position:relative;display:inline;top:4px" class="material-icons">download</p>
+          <p style="display:inline;font-size:15px"><b>下载</b></p>
+          <h2>Galaxy Preview</h2>
+          <p>The preview version released publicly by the developer.</p>
+          <s-button disabled="true">Unavailable</s-button>
+          </div>
+            </s-card>
+            <div style="height:15px;"></div>
+            <s-card style="display: block; max-width: 320px; padding: 24px;"; >
+            <div style="position:relative;top: -15px">
+          <p style="position:relative;display:inline;top:4px" class="material-icons">download</p>
+          <p style="display:inline;font-size:15px"><b>下载</b></p>
+          <h2>Icecraft</h2>
+          <p>The predecessor to the Galaxy. You might remember it?</p>
+          <s-button disabled="true">Unavailable</s-button>
+          </div>
+            </s-card>
+            </div>
+          </div>
+                <div style="height:100px;"></div>
+                <div style="text-align:center">
+                    <footer>
+                        <hr>
+                        <p>outice 2026</p>
+                        <p>Build with <a href="http://soberjs.com">Sober</a>
+                        </p>
+                        <p>Designed by <a href="http://fostar.home.kg">Fostar</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        </s-drawer>
+    </s-page>
+    </script>
+    <script src="https://unpkg.com/sober@1.1.8/dist/sober.min.js"></script>
+    <script src="/sober-theme.min.js"></script>
+    <script>
+        sober.theme.createScheme('#15559a', { page: document.querySelector('s-page') })
+    </script>
+</body>
+
+</html>

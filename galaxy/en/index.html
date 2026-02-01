@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Galaxy Client</title>
+    <style>
+        html,
+            body {
+              margin: 0;
+              /**禁用字体缩放**/
+              -webkit-text-size-adjust: none;
+            }
+        
+            /**隐藏未加载的组件**/
+            :not(:defined) {
+              display: none;
+            }
+            a {
+              text-decoration: none;
+              color: var(--s-color-primary);
+            }
+            div.{
+              overflow: hidden;
+            }
+            div.content{
+              width: 95%;
+              margin: auto;
+            }
+            div.infocards {
+              display: grid;
+                    justify-content: center;
+                    align-items: center;
+            }
+    </style>
+</head>
+
+<body>
+    <s-page theme="auto">
+      <s-drawer style="height: 100%" id="drawer">
+  <div slot="start">  <s-menu style="max-width: 280px; margin: 0">
+          <s-menu-item checked="true">
+          <s-icon slot="start" name="home"></s-icon>
+          Home
+          </s-menu-item>
+</s-menu></div>
+        <s-appbar style="width:100%">
+            <!--左侧菜单按钮-->
+            <s-icon-button slot="navigation">
+                <s-icon name="menu" onclick="document.querySelector('#drawer').toggle()"></s-icon>
+            </s-icon-button>
+            <!--标题-->
+            <div slot="headline">Galaxy</div>
+        </s-appbar>
+        <div class="content">
+            <div style="text-align:center;">
+                <div>
+                    <div style="height:15px;"></div>
+                    <img src="/icon.png" alt="Galaxy Icon" width="200px" height="200px" style="border-radius: 50%;">
+                </div>
+                <h1>Galaxy</h1>
+                <p>(maybe)The ultimate MCPE 0.14 client</p>
+                <s-button> Get Started </s-button>
+            </div>
+            <div style="height:100px;"></div>
+            <div class="infocards">
+                <s-card type="outlined" clickable="true" style="width:320px">
+                    <div slot="image">
+                        <img src="/shot1.jpg" alt="Screenshot of main menu." style="max-width: 100%;max-height: 100%;">
+                    </div>
+                    <div slot="headline">Fancy UI</div>
+                    <div slot="text">Modern UI design brings you an eye-candy experience.</div>
+                </s-card>
+                <div style="height:15px;"></div>
+                <s-card type="outlined" clickable="true" style="width:320px">
+                    <div slot="image">
+                        <img src="/shot2.jpg" alt="Screenshot of main menu." style="max-width: 100%;max-height: 100%;">
+                    </div>
+                    <div slot="headline">Rich Feature</div>
+                    <div slot="text">20+ useful tweaks for PVP players,let them improve your gaming experience!</div>
+                </s-card>
+                <div style="height:100px;"></div>
+                <div style="text-align:center">
+                    <footer>
+                        <hr>
+                        <p>outice 2026</p>
+                        <p>Build with <a href="http://soberjs.com">Sober</a>
+                        </p>
+                        <p>Designed by <a href="http://fostar.home.kg">Fostar</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+     </s-drawer>
+    </s-page>
+    </script>
+    <script src="https://unpkg.com/sober@1.1.8/dist/sober.min.js"></script>
+    <script src="/sober-theme.min.js"></script>
+    <script>
+        sober.theme.createScheme('#15559a', { page: document.querySelector('s-page') })
+    </script>
+</body>
+
+</html>
